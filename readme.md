@@ -12,12 +12,12 @@ El objetivo es construir una base reusable de algoritmos y documentar el razonam
 
 Este flujo permite separar claramente:
 - intuición
-- implementación
+- modulos
 - explicación formal
 
 ## Estructura del proyecto
 euler/
-├── eulerlib/
+├── lib/
 │   ├── primes.py
 │   ├── number_theory.py
 │   └── utils.py
@@ -26,17 +26,12 @@ euler/
 │   ├── p001.ipynb
 │   └── ...
 │
-├── problems/
-│   ├── p001.py
-│   └── ...
+├── syntax/
+│   └── usos_especiales.py
 │
 ├── docs/
-│   ├── typst/
-│   │   ├── main.typ
-│   │   └── problems/
-│   │       ├── p001.typ
-│   │       └── ...
-│   └── build/
+│   ├── main.typ
+│   └── out/
 │
 ├── tests/
 │   └── ...
