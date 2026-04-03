@@ -30,6 +30,11 @@ combined = list(zip(names, scores)) # [('Alice', 85), ('Bob', 92)]
 nums = [10, 20, 30, 40] # Comparar elementos adyacentes
 pairs = list(zip(nums, nums[1:])) # [(10, 20), (20, 30), (30, 40)]
 
+# any: al menos uno cumple
+any(n % 7 == 0 for n in range(10))  # True
+# all: todos cumplen
+all(n > 0 for n in [1,2,3])         # True
+
 # memorizacion con lru_cache
 from functools import lru_cache
 @lru_cache(maxsize=None)
@@ -37,12 +42,20 @@ def fibonacci(n):
     if n < 2: return n
     return fibonacci(n-1) + fibonacci(n-2)
 
-# any: al menos uno cumple
-any(n % 7 == 0 for n in range(10))  # True
-# all: todos cumplen
-all(n > 0 for n in [1,2,3])         # True
+# resolución numérica y algebraica de SEL con Symphy
+from sympy import Matrix
+A = Matrix([[3, -2], [-3, 6]])
+print(A.solve(Matrix([2, -2])))
+A = Matrix([[1, 1], [1, -1]])
+b = Matrix([sqrt(2), pi])
+sol = A.solve(b)
+print(sol)  # Matrix([(sqrt(2) + pi)/2, (sqrt(2) - pi)/2])
+print(sol.evalf())  # Matrix([[2.06...], [-0.57...]])
 
 #DESBLOQUEADOS:
+# resolución numérica de SEL
+A = numpy.array([[1,-1],[2,-3]])
+print(numpy.linalg.solve(A, [10,0]))
 # MCD, mcm y prod (desbloqueado en p005)
 import math
 math.gcd(48, 18, 39)
