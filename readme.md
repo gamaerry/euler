@@ -35,4 +35,4 @@ euler/
 │   └── ...
 │
 ├── pyproject.toml
-└── README.md
+└── readme.md
