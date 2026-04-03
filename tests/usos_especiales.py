@@ -14,7 +14,7 @@ sum(i for i in range(1000) if i % 3 == 0 or i % 5 == 0)
 numbers = [1, 2, 3, 4, 5]
 result = ["Big Even" if n % 2 == 0 else "Big Odd" for n in numbers if n > 2] # Result: ['Big Odd', 'Big Even', 'Big Odd'] 
 
-# Uso de lambdas como keys:
+# lambdas como keys:
 students = [('Alice', 'A', 15), ('Bob', 'B', 12), ('Charlie', 'A', 20)] 
 sorted_students = sorted(students, key=lambda x: x[2]) # Output: [('Bob', 'B', 12), ('Alice', 'A', 15), ('Charlie', 'A', 20)] 
 
@@ -37,16 +37,17 @@ def fibonacci(n):
     if n < 2: return n
     return fibonacci(n-1) + fibonacci(n-2)
 
-# Máximo Común Divisor y el Mínimo Común Múltiplo.
-import math
-print(math.gcd(48, 18)) # 6
-print(math.lcm(4, 6))   # 12
-
-# permutations → permutaciones
-list(permutations([1, 2, 3], 2)) # [(1,2), (1,3), (2,1), (2,3), (3,1), (3,2)]
-# combinations → combinaciones sin repetición
-list(combinations([1, 2, 3], 2)) # [(1,2), (1,3), (2,3)]
-# any → al menos uno cumple
+# any: al menos uno cumple
 any(n % 7 == 0 for n in range(10))  # True
-# all → todos cumplen
+# all: todos cumplen
 all(n > 0 for n in [1,2,3])         # True
+
+#DESBLOQUEADOS:
+# MCD, mcm y prod (desbloqueado en p005)
+import math
+math.gcd(48, 18, 39)
+math.lcm(4, 6, 8, 10)
+math.prod([10, 10, 101])
+# enésimo numero primo (desbloqueado en p007)
+import numpy
+numpy.prime(10001)
