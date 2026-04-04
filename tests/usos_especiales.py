@@ -62,5 +62,10 @@ math.gcd(48, 18, 39)
 math.lcm(4, 6, 8, 10)
 math.prod([10, 10, 101])
 # enésimo numero primo (desbloqueado en p007)
-import numpy
-numpy.prime(10001)
+from sympy import sieve, prime
+prime(10001)
+# primos en rango (desbloqueado en p010)
+sieve.extend(2_000_000) # asegura que sieve alcance 2M (no exacto, se sobrepasa)
+i = sieve.search(2_000_000)[0] # n-th del primo mas cercano a 2M por la izquierda
+sum(sieve[:i+1]) # mas estable
+sum(sieve._list[:i]) # ligeramente más optimo, pero menos estable por ser API interna
